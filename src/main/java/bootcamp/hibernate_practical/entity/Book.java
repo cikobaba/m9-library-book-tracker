@@ -1,5 +1,5 @@
 package bootcamp.hibernate_practical.entity;
-
+import jakarta.persistence.Version;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,7 +24,8 @@ public class Book {
     private String genre;
     private int publicationYear;
     private boolean available;
-
+    @Version
+    private Long version;
     public Book(String title, String author, String genre, int publicationYear, boolean available) {
         this.title = title;
         this.author = author;
