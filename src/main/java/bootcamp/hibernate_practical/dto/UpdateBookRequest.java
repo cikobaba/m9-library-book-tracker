@@ -1,9 +1,10 @@
 
 package bootcamp.hibernate_practical.dto;
-
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+
 import lombok.Getter;
 
 @Getter
@@ -22,5 +23,6 @@ public class UpdateBookRequest {
     @Max(value = 2100, message = "Publication year must not exceed 2100")
     private int publicationYear;
 
-    private boolean available;
+    @NotNull(message = "Availability status is required")
+    private Boolean available;
 }

@@ -81,7 +81,7 @@ class BookServiceTest {
     @Test
     void shouldUpdateBook() {
         UpdateBookRequest request = mock(UpdateBookRequest.class);
-
+        when(request.getAvailable()).thenReturn(false);
         when(request.getTitle()).thenReturn("Updated 1984");
         when(request.getAuthor()).thenReturn("George Orwell");
         when(request.getGenre()).thenReturn("Fiction");
